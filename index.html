@@ -75,7 +75,7 @@ nav.scrolled{background:rgba(17,17,17,0.98);border-bottom-color:rgba(255,107,43,
 .scroll-line-bar{width:1px;height:40px;background:linear-gradient(to bottom,var(--orange),transparent);animation:scrollD 2s ease-in-out infinite}
 @keyframes scrollD{0%,100%{opacity:1}50%{opacity:0.3}}
 /* STATS */
-.stats-section{display:grid;grid-template-columns:repeat(4,1fr);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
+.stats-section{display:grid;grid-template-columns:repeat(3,1fr);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
 .stat-box{padding:2.5rem 2rem;text-align:center;border-right:0.5px solid var(--border);transition:background 0.3s}
 .stat-box:last-child{border:none}
 .stat-box:hover{background:var(--orange-glow)}
@@ -129,7 +129,7 @@ section{padding:7rem 5%}
 .diff-card h4{font-family:'Poppins',sans-serif;font-weight:700;font-size:0.975rem;margin-bottom:0.5rem}
 .diff-card p{font-size:0.845rem;color:var(--text-secondary);line-height:1.7}
 /* APPROACH */
-.approach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3.5rem;counter-reset:steps}
+.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;counter-reset:steps}
 .approach-step{background:var(--card-bg);border:0.5px solid var(--border);border-radius:14px;padding:2rem;text-align:center;transition:all 0.3s;counter-increment:steps}
 .approach-step::before{content:counter(steps,decimal-leading-zero);font-family:'Poppins',sans-serif;font-size:3.5rem;font-weight:900;color:rgba(255,107,43,0.15);line-height:1;display:block;margin-bottom:1rem;transition:color 0.3s}
 .approach-step:hover{border-color:var(--border-hover);transform:translateY(-5px)}
@@ -139,7 +139,7 @@ section{padding:7rem 5%}
 .approach-step h4{font-family:'Poppins',sans-serif;font-weight:700;font-size:0.975rem;margin-bottom:0.5rem}
 .approach-step p{font-size:0.82rem;color:var(--text-secondary);line-height:1.7}
 /* CLIENTS */
-.clients-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3.5rem}
+.clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
 .client-card{background:var(--card-bg);border:0.5px solid var(--border);border-radius:14px;padding:2rem;text-align:center;text-decoration:none;color:var(--white);transition:all 0.35s;display:flex;flex-direction:column;align-items:center;gap:0.6rem}
 .client-card:hover{border-color:var(--border-hover);transform:translateY(-6px);background:var(--card-hover);box-shadow:0 24px 48px rgba(0,0,0,0.4)}
 .client-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:0.975rem}
@@ -316,7 +316,7 @@ footer{padding:2.5rem 5%;border-top:0.5px solid var(--border);display:flex;align
 
 <!-- STATS -->
 <div class="stats-section">
-  <div class="stat-box reveal"><div class="stat-num"><span class="counter" data-target="4">0</span><span>+</span></div><div class="stat-label">Active Clients</div></div>
+</div>
   <div class="stat-box reveal reveal-delay-1"><div class="stat-num"><span class="counter" data-target="3">0</span><span> Markets</span></div><div class="stat-label">Gulf Region Focus</div></div>
   <div class="stat-box reveal reveal-delay-2"><div class="stat-num"><span class="counter" data-target="9">0</span><span>+</span></div><div class="stat-label">Services Offered</div></div>
   <div class="stat-box reveal reveal-delay-3"><div class="stat-num"><span class="counter" data-target="100">0</span><span>%</span></div><div class="stat-label">Results Focused</div></div>
@@ -423,7 +423,7 @@ footer{padding:2.5rem 5%;border-top:0.5px solid var(--border);display:flex;align
 <!-- CLIENTS -->
 <section id="clients">
   <div class="centered reveal">
-    <span class="section-tag">Our Clients</span>
+    <span class="section-tag">Some Clients</span>
     <h2 class="section-title">Brands We <em>Work With</em></h2>
     <p class="section-sub">Real businesses achieving real growth. Our clients are looking for progress, not just posting.</p>
   </div>
@@ -443,7 +443,7 @@ footer{padding:2.5rem 5%;border-top:0.5px solid var(--border);display:flex;align
     <p class="section-sub">Real designs created for real clients — social posts, advertising, and brand visuals.</p>
   </div>
   <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin:2.5rem 0 2rem">
-    <button class="filter-btn active" data-filter="all">All Work</button>
+    <button class="filter-btn active" data-filter="all">Some Work</button>
     <button class="filter-btn" data-filter="esnad">Esnad Aluminium</button>
     <button class="filter-btn" data-filter="colonel">Colonel Tours</button>
     <button class="filter-btn" data-filter="sabah">Sabah Al Naser</button>
@@ -790,101 +790,350 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 const LANG = {
-  en: { dir:'ltr', font:'', badge:'Digital Marketing Agency — Gulf Region', h1:"We Don't Manage Pages.<br>We Build <em>Growth Systems.</em>", sub:'Skipper Media helps businesses in the Gulf turn their social media into a structured, performance-driven engine that delivers real clients and measurable revenue.', btn1:'Explore Services', btn2:'Our Clients', navLinks:['About','Services','Clients','Portfolio','Packages','Contact'], cta:"Let's Talk", stats:['Active Clients','Gulf Markets','Services Offered','Results Focused'], aboutTag:'Who We Are', aboutTitle:'Your <em>Growth Partner</em><br>in the Gulf', servTag:'What We Do', servTitle:'Complete <em>Marketing Services</em>', clientTag:'Our Clients', clientTitle:'Brands We <em>Work With</em>', portTag:'Our Work', portTitle:'Creative <em>Portfolio</em>', brandingFilter:'Branding & Identity', diffTag:'Why Skipper', diffTitle:'What Makes Us <em>Different</em>', approachTag:'How We Work', approachTitle:'Our <em>Process</em>', pkgTag:'Pricing', pkgTitle:'Clear <em>Packages</em>', mkTag:'Where We Operate', mkTitle:'Gulf <em>Markets</em>', ctaH:'Ready to Build Your<br><em>Growth System?</em>', ctaP:"Let's talk about your business goals and build a strategy that delivers real, measurable results.", waBtn:'WhatsApp Us', visTag:'Our Vision', visQ:'To become the trusted <em>growth partner</em> for businesses in the Gulf — delivering high-impact marketing systems that combine creativity, technology, and performance.', visSub:'Skipper Media — Turning social media into a client-generating system.', footerTag:'Turning social media into a client-generating system.' },
-  ar: { dir:'rtl', font:"'Cairo',sans-serif", badge:'وكالة تسويق رقمي — منطقة الخليج', h1:'نحن لا ندير صفحات.<br>نحن نبني <em>أنظمة نمو.</em>', sub:'Skipper Media تساعد الشركات في الخليج على تحويل السوشيال ميديا إلى محرك نمو حقيقي يولّد عملاء ومبيعات قابلة للقياس.', btn1:'استكشف خدماتنا', btn2:'عملاؤنا', navLinks:['من نحن','خدماتنا','عملاؤنا','أعمالنا','الباقات','تواصل'], cta:'تواصل معنا', stats:['عملاء نشطون','أسواق الخليج','خدمات متكاملة','نتائج حقيقية'], aboutTag:'من نحن', aboutTitle:'شريكك في النمو<br><em>في الخليج</em>', servTag:'ماذا نقدم', servTitle:'خدمات <em>متكاملة</em>', clientTag:'عملاؤنا', clientTitle:'علامات نعمل <em>معها</em>', portTag:'أعمالنا', portTitle:'بورتفوليو <em>إبداعي</em>', brandingFilter:'هوية بصرية', diffTag:'لماذا Skipper', diffTitle:'ما الذي يميّزنا <em>عن غيرنا</em>', approachTag:'كيف نعمل', approachTitle:'<em>عمليتنا</em>', pkgTag:'الأسعار', pkgTitle:'باقات <em>واضحة</em>', pkg1:'استارتر — 899 دولار', pkg2:'جروث — 1,299 دولار', pkg3:'مخصص', mkTag:'أسواقنا', mkTitle:'أسواق <em>الخليج</em>', ctaH:'هل أنت مستعد لبناء<br><em>نظام نموك؟</em>', ctaP:'تحدث معنا عن أهداف عملك وسنبني استراتيجية تحقق نتائج حقيقية وقابلة للقياس.', waBtn:'تواصل عبر واتساب', visTag:'رؤيتنا', visQ:'أن نصبح الشريك الموثوق للنمو للشركات في الخليج — بتقديم أنظمة تسويق عالية التأثير تجمع بين الإبداع والتقنية والأداء.', visSub:'.Skipper Media — تحويل السوشيال ميديا إلى نظام يجلب العملاء', footerTag:'تحويل السوشيال ميديا إلى نظام يجلب العملاء.' }
+  en: {
+    dir:'ltr', font:'',
+    badge:'Digital Marketing Agency — Gulf Region',
+    h1:"We Don't Manage Pages.<br>We Build <em>Growth Systems.</em>",
+    sub:'Skipper Media helps businesses in the Gulf turn their social media into a structured, performance-driven engine that delivers real clients and measurable revenue.',
+    btn1:'Explore Services', btn2:'Some Clients',
+    navLinks:['About','Services','Clients','Portfolio','Packages','Contact'],
+    cta:"Let's Talk",
+    stats:['Gulf Markets','Services Offered','Results Focused'],
+    aboutTag:'Who We Are', aboutTitle:'Your <em>Growth Partner</em><br>in the Gulf',
+    aboutSub:"Skipper Media is a modern digital marketing agency focused on building complete growth systems for businesses — not just managing their online presence.\n\nWe help brands move from random posting and scattered efforts into structured, performance-driven marketing that delivers real results.\n\nOur goal is simple: turn your online presence into a reliable source of growth.",
+    servTag:'What We Do', servTitle:'Complete <em>Marketing Services</em>',
+    tabLabels:['Marketing & Growth','Creative & Branding','AI & Tech Systems','Dev & Automation'],
+    servSub:'Three pillars of execution — marketing, creative, and technology — working as one system.',
+    clientTag:'Some Clients', clientTitle:'Brands We <em>Work With</em>',
+    clientSub:"Real businesses achieving real growth. Our clients are looking for progress, not just posting.",
+    portTag:'Our Work', portTitle:'Creative <em>Portfolio</em>',
+    portSub:'Real designs created for real clients — social posts, advertising, and brand visuals.',
+    pkgTag:'Pricing', pkgTitle:'Clear <em>Packages</em>',
+    pkgSub:'Transparent, structured pricing designed for businesses at every stage of growth.',
+    diffTag:'Why Skipper', diffTitle:'What Makes Us <em>Different</em>',
+    diffSub:"We don't just create content. We build scalable systems that grow with your business.",
+    approachTag:'How We Work', approachTitle:'Our <em>Process</em>',
+    approachSub:'A proven four-step process that transforms marketing into a growth engine.',
+    mkTag:'Where We Operate', mkTitle:'Gulf <em>Markets</em>',
+    mkSub:'Deep understanding of Gulf business culture, consumer behavior, and local market dynamics.',
+    visTag:'Our Vision',
+    visQ:'To become the trusted <em>growth partner</em> for businesses in the Gulf — delivering high-impact marketing systems that combine creativity, technology, and performance.',
+    visSub:'Skipper Media — Turning social media into a client-generating system.',
+    ctaH:'Ready to Build Your<br><em>Growth System?</em>',
+    ctaP:"Let's talk about your business goals and build a strategy that delivers real, measurable results.",
+    waBtn:'WhatsApp Us',
+    footerTag:'Turning social media into a client-generating system.',
+    footerLinks:['About','Services','Clients','Portfolio','Packages','Instagram'],
+    mktCards:[
+      ['Kuwait','A high-value digital market with strong appetite for premium agencies and fast-growing e-commerce demand.'],
+      ['Bahrain','A dynamic SME market with strong demand for professional social media management and performance-focused partners.'],
+      ['Oman','A growing digital market with increasing adoption of paid advertising and strong demand for quality content production.']
+    ],
+    diffCards:[
+      ['Results, Not Just Visuals','Every campaign is tied to a business objective — leads, conversions, and revenue. Not just likes.'],
+      ['Creativity Meets Strategy','We combine analytical precision with creative depth — giving you the best of both worlds.'],
+      ['Scalable Systems','We build repeatable, scalable marketing systems that keep generating results month after month.'],
+      ['Content & Performance Together','Your brand story and ad spend work in perfect alignment for maximum impact.']
+    ],
+    approachSteps:[
+      ['Discover','We deep-dive into your brand, competitors, and audience to build a solid strategic foundation.'],
+      ['Strategize','We create a clear marketing roadmap with goals, messaging, content pillars, and ad strategy.'],
+      ['Execute','Our creative and media team produces high-quality content and launches optimized campaigns.'],
+      ['Optimize','We analyze data, report results clearly, and continuously improve to maximize your ROI.']
+    ],
+    pillars:[
+      ['Strategy First','Every project starts with understanding your market, audience, and positioning.'],
+      ['Creative Excellence','Premium visuals and content that reflect your brand at its absolute best.'],
+      ['Performance Focus','Every campaign built to generate real leads, not just impressions.'],
+      ['Measurable Results','Data-driven decisions with continuous optimization for maximum ROI.']
+    ],
+    pkgItems:[
+      ['Starter','899 USD','per month · Start organized & generate first leads',['8 Posts + 2 Reels','Basic CRM setup','Sales Pipeline setup','Landing Page or Funnel','Booking Tool integration']],
+      ['Growth','1,299 USD','per month · Scale & build a complete system',['Branding (Logo + Basic Identity)','15 Posts + 5 Reels','Social Media Management','Advanced CRM + Sales Pipeline','Professional Landing Page / Funnel','AI Chatbot for customer handling']],
+      ["Custom","Let's Talk",'For specific or advanced business needs',['Fully customized system for your business','Automation + AI + Marketing Systems','Scalable solutions based on your goals','Complete end-to-end pipeline setup','Dedicated strategy & execution']]
+    ]
+  },
+  ar: {
+    dir:'rtl', font:"'Cairo',sans-serif",
+    badge:'وكالة تسويق رقمي — منطقة الخليج',
+    h1:'نحن لا ندير صفحات.<br>نحن نبني <em>أنظمة نمو.</em>',
+    sub:'Skipper Media تساعد الشركات في الخليج على تحويل السوشيال ميديا إلى محرك نمو حقيقي يولّد عملاء ومبيعات قابلة للقياس.',
+    btn1:'استكشف خدماتنا', btn2:'بعض عملائنا',
+    navLinks:['من نحن','خدماتنا','عملاؤنا','أعمالنا','الباقات','تواصل'],
+    cta:'تواصل معنا',
+    stats:['أسواق الخليج','خدمات متكاملة','نتائج حقيقية'],
+    aboutTag:'من نحن', aboutTitle:'شريكك في النمو<br><em>في الخليج</em>',
+    aboutSub:"Skipper Media وكالة تسويق رقمي حديثة متخصصة في بناء أنظمة نمو متكاملة للشركات — وليس فقط إدارة حساباتها.\n\nنساعد العلامات التجارية على التحول من النشر العشوائي إلى تسويق منظم قائم على الأداء يحقق نتائج حقيقية.\n\nهدفنا بسيط: تحويل وجودك الرقمي إلى مصدر موثوق للنمو.",
+    servTag:'ماذا نقدم', servTitle:'خدمات <em>تسويق متكاملة</em>',
+    tabLabels:['التسويق والنمو','الإبداع والهوية','الذكاء الاصطناعي والتقنية','التطوير والأتمتة'],
+    serviceCards:{
+      marketing:[
+        ['إدارة السوشيال ميديا','إدارة متكاملة لحساباتك على منصات التواصل مع استراتيجية محتوى واضحة وتفاعل مع الجمهور.',['خطة المحتوى','كتابة النصوص','إدارة المجتمع','تحليلات']],
+        ['إنشاء المحتوى','محتوى استراتيجي يعكس علامتك ويجذب جمهورك ويحول المتابعين إلى عملاء.',['السكريبت','التسميات التوضيحية','الجدولة','مراجعة الأداء']],
+        ['الإعلانات المدفوعة','حملات إعلانية على منصات Meta مبنية لتوليد عملاء حقيقيين بأقل تكلفة ممكنة.',['إعلانات فيسبوك','إعلانات انستجرام','استهداف الجمهور','تحسين CPA']],
+        ['استراتيجية التسويق','خارطة طريق تسويقية متكاملة تغطي التموضع والرسائل والقنوات وخطة النمو.',['بحث السوق','التموضع','استراتيجية القنوات','خارطة النمو']]
+      ],
+      creative:[
+        ['التصميم الإبداعي','مرئيات احترافية تجذب الانتباه وتعكس علامتك بوضوح وتأثير على جميع المنصات.',['تصاميم السوشيال','كريتيف الإعلانات','قوالب الستوري']],
+        ['الهوية البصرية','بناء هوية بصرية قوية تجعل عملك قابلاً للتعرف عليه فوراً وتعكس الاحترافية.',['تصميم الشعار','دليل الهوية','النظام البصري']],
+        ['إنتاج الفيديو','فيديوهات قصيرة جذابة ومحتوى إعلاني مصمم للمنصات الحديثة.',['ريلز','فيديوهات إعلانية','موشن جرافيك']]
+      ],
+      ai:[
+        ['حلول الذكاء الاصطناعي','حلول ذكية تساعدك على تطوير عملك وتوفير وقتك باستخدام أحدث تقنيات الذكاء الاصطناعي.',['تكامل الذكاء الاصطناعي','أتمتة ذكية','محتوى AI']],
+        ['تحسين العمليات','تنظيم وتبسيط جميع العمليات داخل مشروعك لزيادة الكفاءة وتقليل الهدر.',['تصميم سير العمل','إعداد SOP','الكفاءة']],
+        ['أنظمة CRM والمبيعات','بناء وإدارة أنظمة متابعة العملاء وخطوط المبيعات بشكل احترافي.',['إعداد CRM','خط المبيعات','تتبع العملاء']],
+        ['الأتمتة','تنفيذ مهامك تلقائياً بدون تدخل يدوي — توفير الوقت والجهد في كل خطوة.',['Zapier','n8n','سير العمل التلقائي']],
+        ['محتوى وردود الذكاء الاصطناعي','إنشاء محتوى ذكي وردود تلقائية باستخدام الذكاء الاصطناعي — شات بوت ورسائل وتسويق.',['شات بوتس','رسائل AI','تسويق ذكي']],
+        ['مواقع وصفحات الهبوط','إنشاء مواقع وصفحات هبوط محسّنة لتحويل الزوار إلى عملاء يدفعون.',['صفحات الهبوط','فانل المبيعات','التحويل']],
+        ['لوحات التحكم والتتبع','لوحات أداء لحظية تمنحك رؤية كاملة لمقاييس عملك ونتائجه.',['تتبع لحظي','لوحات KPI','التقارير']],
+        ['الشات بوت','نشر شات بوت ذكي على واتساب وماسنجر وموقعك — يؤهل العملاء ويحولهم 24/7.',['بوت واتساب','بوت ماسنجر','دردشة الويب']],
+        ['Voice AI Agents','أنظمة رد صوتي ذكية تتعامل مع عملائك باحترافية — استفسارات وحجوزات ومتابعة تلقائية.',['Voice AI','رد تلقائي','دعم 24/7']],
+        ['أدوات التكامل','ربط جميع أدواتك ومنصاتك في نظام واحد متكامل باستخدام Zapier و n8n.',['Zapier','n8n','ربط API']],
+        ['نظام متكامل لمشروعك','نظام عمل متكامل من جذب العملاء لإغلاق البيع وإدارة ما بعد البيع.',['شامل','من الجذب للبيع','نظام كامل']]
+      ],
+      tech:[
+        ['تطوير المواقع','مواقع وصفحات هبوط احترافية مبنية للأداء والتحويل وتجربة علامة تجارية متميزة.',['صفحات الهبوط','مواقع البورتفوليو','Mobile-First']],
+        ['حلول الأتمتة','أدوات أتمتة ذكية تبسّط سير عمل التسويق وتوفر الوقت في المهام المتكررة.',['أتمتة CRM','فانل العملاء','تسلسل البريد']]
+      ]
+    },
+    servSub:'ثلاثة محاور تنفيذية — تسويق وإبداع وتكنولوجيا — تعمل كمنظومة واحدة.',
+    clientTag:'بعض عملائنا', clientTitle:'علامات عملنا <em>معها</em>',
+    clientSub:'شركات حقيقية تحقق نمواً حقيقياً. عملاؤنا يبحثون عن تقدم، لا مجرد نشر.',
+    portTag:'أعمالنا', portTitle:'بورتفوليو <em>إبداعي</em>',
+    portSub:'تصاميم حقيقية لعملاء حقيقيين — سوشيال ميديا وإعلانات وهوية بصرية.',
+    pkgTag:'الأسعار', pkgTitle:'باقات <em>واضحة</em>',
+    pkgSub:'تسعير شفاف ومنظم مصمم للشركات في كل مرحلة من مراحل النمو.',
+    diffTag:'لماذا Skipper', diffTitle:'ما الذي يميّزنا <em>عن غيرنا</em>',
+    diffSub:'نحن لا نصنع محتوى فقط. نبني أنظمة قابلة للتوسع تنمو مع شركتك.',
+    approachTag:'كيف نعمل', approachTitle:'<em>منهجيتنا</em>',
+    approachSub:'عملية مؤكدة من أربع خطوات تحول التسويق إلى محرك نمو.',
+    mkTag:'أسواقنا', mkTitle:'أسواق <em>الخليج</em>',
+    mkSub:'فهم عميق لثقافة الأعمال الخليجية وسلوك المستهلك وديناميكيات السوق.',
+    visTag:'رؤيتنا',
+    visQ:'أن نصبح الشريك الموثوق للنمو للشركات في الخليج — بتقديم أنظمة تسويق عالية التأثير تجمع بين الإبداع والتقنية والأداء.',
+    visSub:'.Skipper Media — تحويل السوشيال ميديا إلى نظام يجلب العملاء',
+    ctaH:'هل أنت مستعد لبناء<br><em>نظام نموك؟</em>',
+    ctaP:'تحدث معنا عن أهداف عملك وسنبني استراتيجية تحقق نتائج حقيقية وقابلة للقياس.',
+    waBtn:'تواصل عبر واتساب',
+    footerTag:'تحويل السوشيال ميديا إلى نظام يجلب العملاء.',
+    footerLinks:['من نحن','خدماتنا','عملاؤنا','أعمالنا','الباقات','إنستجرام'],
+    mktCards:[
+      ['الكويت','سوق رقمي عالي القيمة مع طلب قوي على الوكالات المتميزة ونمو متسارع في التجارة الإلكترونية.'],
+      ['البحرين','سوق المنشآت الصغيرة والمتوسطة الديناميكي مع طلب متزايد على إدارة السوشيال ميديا.'],
+      ['عُمان','سوق رقمي متنامٍ مع تبني متزايد للإعلانات المدفوعة وطلب قوي على إنتاج المحتوى.']
+    ],
+    diffCards:[
+      ['النتائج لا الجماليات فقط','كل حملة مرتبطة بهدف تجاري — عملاء وتحويلات ومبيعات. ليس مجرد إعجابات.'],
+      ['الإبداع يلتقي الاستراتيجية','ندمج الدقة التحليلية مع العمق الإبداعي — نقدم لك أفضل ما في العالمين.'],
+      ['أنظمة قابلة للتوسع','نبني أنظمة تسويق متكررة وقابلة للتوسع تستمر في تحقيق النتائج شهراً بعد شهر.'],
+      ['المحتوى والأداء معاً','قصة علامتك وميزانية إعلاناتك تعملان بتناسق تام لأقصى تأثير.']
+    ],
+    approachSteps:[
+      ['اكتشاف','نتعمق في علامتك والمنافسين والجمهور لبناء أساس استراتيجي متين.'],
+      ['تخطيط','نضع خارطة طريق واضحة بأهداف ورسائل ومحاور محتوى واستراتيجية إعلانية.'],
+      ['تنفيذ','فريقنا الإبداعي ينتج محتوى عالي الجودة ويطلق حملات محسّنة للأداء.'],
+      ['تحسين','نحلل البيانات ونراجع النتائج بوضوح ونحسّن باستمرار لتعظيم عائد استثمارك.']
+    ],
+    pillars:[
+      ['الاستراتيجية أولاً','كل مشروع يبدأ بفهم سوقك وجمهورك وتموضعك.'],
+      ['التميز الإبداعي','محتوى ومرئيات احترافية تعكس علامتك بأفضل صورة.'],
+      ['التركيز على الأداء','كل حملة مبنية لتوليد عملاء حقيقيين لا مجرد مشاهدات.'],
+      ['نتائج قابلة للقياس','قرارات مبنية على البيانات مع تحسين مستمر لأقصى عائد.']
+    ],
+    pkgItems:[
+      ['استارتر','899 دولار','شهرياً · ابدأ منظماً واكتسب أولى عملائك',['8 منشورات + 2 ريلز','إعداد CRM أساسي','إعداد خط المبيعات','صفحة هبوط أو فانل','ربط أداة الحجز']],
+      ['جروث','1,299 دولار','شهرياً · توسّع وابنِ نظاماً متكاملاً',['هوية بصرية (شعار + أساسيات)','15 منشور + 5 ريلز','إدارة السوشيال ميديا','CRM متقدم + خط المبيعات','صفحة هبوط / فانل احترافية','شات بوت AI للتعامل مع العملاء']],
+      ['مخصص','تواصل معنا','للشركات ذات الاحتياجات الخاصة أو المتقدمة',['نظام مخصص بالكامل لعملك','أتمتة + ذكاء اصطناعي + أنظمة تسويق','حلول قابلة للتوسع بناءً على أهدافك','نظام متكامل من الجذب للإغلاق','استراتيجية وتنفيذ مخصصان']]
+    ]
+  }
 };
-function qs(s) { return document.querySelector(s); }
+
+function qs(s){ return document.querySelector(s); }
+
 function setLang(lang) {
   const t = LANG[lang]; if(!t) return;
   localStorage.setItem('skipper_lang', lang);
+
+  // Direction & font
   document.body.style.direction = t.dir;
   document.body.style.fontFamily = t.font;
   document.documentElement.lang = lang;
   document.documentElement.dir = t.dir;
+
+  // Buttons
   qs('#btnEN').classList.toggle('active', lang==='en');
   qs('#btnAR').classList.toggle('active', lang==='ar');
+
+  // Hero
   const badge = qs('.hero-badge');
   if(badge) { const dot = badge.querySelector('.hero-badge-dot'); badge.textContent = ' ' + t.badge; if(dot) badge.prepend(dot); }
   const h1 = qs('.hero h1'); if(h1) h1.innerHTML = t.h1;
   const sub = qs('.hero-sub'); if(sub) sub.textContent = t.sub;
+
+  // Hero buttons
   const hb = document.querySelectorAll('.hero-actions a');
   if(hb[0]) { const s=hb[0].querySelector('svg').cloneNode(true); hb[0].innerHTML=''; hb[0].appendChild(s); hb[0].append(' '+t.btn1); }
   if(hb[1]) { const s=hb[1].querySelector('svg').cloneNode(true); hb[1].innerHTML=''; hb[1].appendChild(s); hb[1].append(' '+t.btn2); }
+
+  // Nav
   document.querySelectorAll('.nav-links a').forEach((a,i) => { if(t.navLinks[i]) a.textContent=t.navLinks[i]; });
-  const cta = qs('.nav-cta'); if(cta) { const s=cta.querySelector('svg')?cta.querySelector('svg').cloneNode(true):null; cta.innerHTML=''; if(s) cta.appendChild(s); cta.append(' '+t.cta); }
+  const cta = qs('.nav-cta');
+  if(cta) { const s=cta.querySelector('svg')?cta.querySelector('svg').cloneNode(true):null; cta.innerHTML=''; if(s) cta.appendChild(s); cta.append(' '+t.cta); }
+
+  // Stats
   document.querySelectorAll('.stat-label').forEach((el,i) => { if(t.stats[i]) el.textContent=t.stats[i]; });
-  [['#about .section-tag',t.aboutTag],['#about .section-title',t.aboutTitle],['#services .section-tag',t.servTag],['#services .section-title',t.servTitle],['#clients .section-tag',t.clientTag],['#clients .section-title',t.clientTitle],['#portfolio .section-tag',t.portTag],['#portfolio .section-title',t.portTitle],['#packages .section-tag',t.pkgTag],['#packages .section-title',t.pkgTitle],['.cta-section h2',t.ctaH],['.vision-quote',t.visQ]].forEach(([sel,val]) => { const el=qs(sel); if(el&&val) el.innerHTML=val; });
-  const ctaP=qs('.cta-section>p'); if(ctaP) ctaP.textContent=t.ctaP;
-  // Diff cards
-  if(t.diffCards) {{
-    document.querySelectorAll('.diff-card').forEach((card,i) => {{
-      if(t.diffCards[i]) {{
-        const h4=card.querySelector('h4'); const p=card.querySelector('p');
-        if(h4) h4.textContent=t.diffCards[i][0];
-        if(p) p.textContent=t.diffCards[i][1];
-      }}
-    }});
-  }}
-  // Approach steps
-  if(t.approachSteps) {{
-    document.querySelectorAll('.approach-step').forEach((step,i) => {{
-      if(t.approachSteps[i]) {{
-        const h4=step.querySelector('h4'); const p=step.querySelector('p');
-        if(h4) h4.textContent=t.approachSteps[i][0];
-        if(p) p.textContent=t.approachSteps[i][1];
-      }}
-    }});
-  }}
+
+  // Section tags & titles
+  const smap = [
+    ['#about .section-tag',t.aboutTag], ['#about .section-title',t.aboutTitle],
+    ['#services .section-tag',t.servTag], ['#services .section-title',t.servTitle],
+    ['#clients .section-tag',t.clientTag], ['#clients .section-title',t.clientTitle],
+    ['#portfolio .section-tag',t.portTag], ['#portfolio .section-title',t.portTitle],
+    ['#packages .section-tag',t.pkgTag], ['#packages .section-title',t.pkgTitle],
+    ['#different .section-tag',t.diffTag], ['#different .section-title',t.diffTitle],
+    ['#approach .section-tag',t.approachTag], ['#approach .section-title',t.approachTitle],
+    ['.cta-section h2',t.ctaH], ['.vision-quote',t.visQ],
+  ];
+  smap.forEach(([sel,val]) => { const el=qs(sel); if(el&&val) el.innerHTML=val; });
+
+  // Section subs
+  const ssub = [
+    ['#services .section-sub',t.servSub], ['#clients .section-sub',t.clientSub],
+    ['#portfolio .section-sub',t.portSub], ['#packages .section-sub',t.pkgSub],
+    ['#different .section-sub',t.diffSub], ['#approach .section-sub',t.approachSub],
+  ];
+  ssub.forEach(([sel,val]) => { const el=qs(sel); if(el&&val) el.textContent=val; });
+
+  // Tab buttons
+  if(t.tabLabels) {
+    document.querySelectorAll('.tab-btn').forEach((btn,i) => {
+      if(!t.tabLabels[i]) return;
+      const svg = btn.querySelector('svg') ? btn.querySelector('svg').cloneNode(true) : null;
+      btn.innerHTML = '';
+      if(svg) btn.appendChild(svg);
+      btn.append(' ' + t.tabLabels[i]);
+    });
+  }
+
+  // Service cards translation
+  if(t.serviceCards) {
+    const panels = {
+      marketing: document.querySelectorAll('#tab-marketing .service-card'),
+      creative:  document.querySelectorAll('#tab-creative .service-card'),
+      ai:        document.querySelectorAll('#tab-ai .service-card'),
+      tech:      document.querySelectorAll('#tab-tech .service-card'),
+    };
+    Object.entries(panels).forEach(([key, cards]) => {
+      const data = t.serviceCards[key];
+      if(!data) return;
+      cards.forEach((card, i) => {
+        if(!data[i]) return;
+        const [title, desc, tags] = data[i];
+        const h3 = card.querySelector('h3');
+        const p  = card.querySelector('p');
+        const tagEls = card.querySelectorAll('.stag');
+        if(h3) h3.textContent = title;
+        if(p)  p.textContent  = desc;
+        tagEls.forEach((el, j) => { if(tags[j]) el.textContent = tags[j]; });
+      });
+    });
+  }
+
+  // About paragraphs
+  if(t.aboutSub) {
+    const paras = document.querySelectorAll('.about-text p');
+    const lines = t.aboutSub.split('\n\n');
+    paras.forEach((p,i) => { if(lines[i]) p.textContent=lines[i]; });
+  }
+
   // About pillars
-  if(t.pillars) {{
-    document.querySelectorAll('.pillar').forEach((p,i) => {{
-      if(t.pillars[i]) {{
-        const h4=p.querySelector('h4'); const pp=p.querySelector('p');
-        if(h4) h4.textContent=t.pillars[i][0];
-        if(pp) pp.textContent=t.pillars[i][1];
-      }}
-    }});
-  }}
-  const wa=qs('.cta-btns a.btn-primary'); if(wa) { const s=wa.querySelector('svg')?wa.querySelector('svg').cloneNode(true):null; wa.innerHTML=''; if(s) wa.appendChild(s); wa.append(' '+t.waBtn); }
-  document.querySelectorAll('.section-tag').forEach(el => { if(el.textContent.match(/Where We|أسواق/)) el.textContent=t.mkTag; if(el.textContent.match(/Vision|رؤية/)) el.textContent=t.visTag; });
-  document.querySelectorAll('.section-title').forEach(el => { if(el.innerHTML.match(/Gulf.*Markets|أسواق.*الخليج/)) el.innerHTML=t.mkTitle; });
+  if(t.pillars) {
+    document.querySelectorAll('.pillar').forEach((p,i) => {
+      if(!t.pillars[i]) return;
+      const h4=p.querySelector('h4'), pp=p.querySelector('p');
+      if(h4) h4.textContent=t.pillars[i][0];
+      if(pp) pp.textContent=t.pillars[i][1];
+    });
+  }
+
+  // Diff cards
+  if(t.diffCards) {
+    document.querySelectorAll('.diff-card').forEach((card,i) => {
+      if(!t.diffCards[i]) return;
+      const h4=card.querySelector('h4'), p=card.querySelector('p');
+      if(h4) h4.textContent=t.diffCards[i][0];
+      if(p) p.textContent=t.diffCards[i][1];
+    });
+  }
+
+  // Approach steps
+  if(t.approachSteps) {
+    document.querySelectorAll('.approach-step').forEach((step,i) => {
+      if(!t.approachSteps[i]) return;
+      const h4=step.querySelector('h4'), p=step.querySelector('p');
+      if(h4) h4.textContent=t.approachSteps[i][0];
+      if(p) p.textContent=t.approachSteps[i][1];
+    });
+  }
+
+  // Markets
+  document.querySelectorAll('.section-tag').forEach(el => {
+    if(el.textContent.trim().match(/Where We|أسواق/)) el.textContent=t.mkTag;
+    if(el.textContent.trim().match(/Vision|رؤية/)) el.textContent=t.visTag;
+  });
+  document.querySelectorAll('.section-title').forEach(el => {
+    if(el.innerHTML.match(/Gulf.*Markets|أسواق.*الخليج/)) el.innerHTML=t.mkTitle;
+  });
+  document.querySelectorAll('.section-sub').forEach(el => {
+    if(el.textContent.match(/Gulf business culture|الأعمال الخليجية/)) el.textContent=t.mkSub;
+  });
+  if(t.mktCards) {
+    document.querySelectorAll('.market-card').forEach((card,i) => {
+      if(!t.mktCards[i]) return;
+      const name=card.querySelector('.market-name'), sub=card.querySelector('.market-sub');
+      if(name) name.textContent=t.mktCards[i][0];
+      if(sub) sub.textContent=t.mktCards[i][1];
+    });
+  }
+
+  // CTA
+  const ctaP=qs('.cta-section>p'); if(ctaP) ctaP.textContent=t.ctaP;
+  const wa=qs('.cta-btns a.btn-primary');
+  if(wa) { const s=wa.querySelector('svg')?wa.querySelector('svg').cloneNode(true):null; wa.innerHTML=''; if(s) wa.appendChild(s); wa.append(' '+t.waBtn); }
+
+  // Vision
   const vs=qs('.vision-sub'); if(vs) vs.textContent=t.visSub;
+
+  // Footer
   const ft=qs('.footer-tagline'); if(ft) ft.textContent=t.footerTag;
   const flLinks = document.querySelectorAll('.footer-links a');
   if(t.footerLinks) flLinks.forEach((a,i) => { if(t.footerLinks[i]) a.textContent=t.footerLinks[i]; });
-  if(t.diffCards) {
-    document.querySelectorAll('.diff-card').forEach((card,i) => {
-      if(t.diffCards[i]) {
-        const h4=card.querySelector('h4'); const p=card.querySelector('p');
-        if(h4) h4.textContent=t.diffCards[i][0];
-        if(p) p.textContent=t.diffCards[i][1];
+
+  // Packages
+  if(t.pkgItems) {
+    document.querySelectorAll('.pkg').forEach((pkg,i) => {
+      if(!t.pkgItems[i]) return;
+      const [name,price,period,...rest] = t.pkgItems[i];
+      const features = rest[0];
+      const tier=pkg.querySelector('.pkg-tier'), pr=pkg.querySelector('.pkg-price');
+      const per=pkg.querySelector('.pkg-period');
+      if(tier) tier.textContent=name;
+      if(pr) {
+        const curr=pr.querySelector('.pkg-currency');
+        pr.innerHTML = price + (curr ? ' <span class="pkg-currency">'+curr.textContent+'</span>' : '');
       }
+      if(per) per.textContent=period;
+      const lis=pkg.querySelectorAll('.pkg-features li');
+      lis.forEach((li,j) => {
+        if(!features[j]) return;
+        const check=li.querySelector('.check');
+        li.textContent=features[j];
+        if(check) li.prepend(check);
+      });
     });
-  }
-  if(t.approachSteps) {
-    document.querySelectorAll('.approach-step').forEach((step,i) => {
-      if(t.approachSteps[i]) {
-        const h4=step.querySelector('h4'); const p=step.querySelector('p');
-        if(h4) h4.textContent=t.approachSteps[i][0];
-        if(p) p.textContent=t.approachSteps[i][1];
-      }
-    });
-  }
-  if(t.pillars) {
-    document.querySelectorAll('.pillar').forEach((p,i) => {
-      if(t.pillars[i]) {
-        const h4=p.querySelector('h4'); const pp=p.querySelector('p');
-        if(h4) h4.textContent=t.pillars[i][0];
-        if(pp) pp.textContent=t.pillars[i][1];
-      }
-    });
-  }
-  if(t.aboutSub) {
-    const paras=document.querySelectorAll('.about-text p');
-    const lines=t.aboutSub.split('\n\n');
-    paras.forEach((p,i) => { if(lines[i]) p.textContent=lines[i]; });
   }
 }
+
 document.addEventListener('DOMContentLoaded', () => { setLang(localStorage.getItem('skipper_lang')||'en'); });
 
 // Email reveal (bypass Cloudflare obfuscation)
